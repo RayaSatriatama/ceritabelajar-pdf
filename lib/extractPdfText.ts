@@ -2,9 +2,6 @@
  * Ekstraksi teks dari file PDF menggunakan pdf-parse.
  * Dijalankan di sisi server (Next.js API route).
  */
-// Handle ESM/CJS interop robustly
-const pdfParseModule = require("pdf-parse");
-const pdfParse = typeof pdfParseModule === "function" ? pdfParseModule : pdfParseModule.default || pdfParseModule;
 
 const MAX_CHARS = 15000;
 
