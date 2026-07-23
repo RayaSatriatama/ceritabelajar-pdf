@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  serverExternalPackages: ["pdfjs-dist"],
+  // Remove serverExternalPackages to let Turbopack bundle it natively
 };
 
 export default nextConfig;
