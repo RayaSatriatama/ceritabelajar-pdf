@@ -5,17 +5,7 @@
 
 const MAX_CHARS = 15000;
 
-// Polyfill Promise.withResolvers for Node 18 / older Vercel runtimes
-if (typeof Promise.withResolvers === "undefined") {
-  (Promise as any).withResolvers = function () {
-    let resolve, reject;
-    const promise = new Promise((res, rej) => {
-      resolve = res;
-      reject = rej;
-    });
-    return { promise, resolve, reject };
-  };
-}
+
 
 export async function extractPdfText(buffer: ArrayBuffer): Promise<string> {
   const pdfjsLib = await import("pdfjs-dist/legacy/build/pdf.js");
@@ -37,7 +27,7 @@ export async function extractPdfText(buffer: ArrayBuffer): Promise<string> {
     const page = await pdf.getPage(i);
     const textContent = await page.getTextContent();
     const pageText = textContent.items
-      .map((item: any) => item.str)
+      .map((item: { str: string }) => item.str)
       .join(" ");
     fullText += pageText + " ";
   }
