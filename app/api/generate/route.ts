@@ -43,6 +43,7 @@ export async function POST(request: NextRequest) {
     try {
       pdfText = await extractPdfText(buffer);
     } catch (err) {
+      console.error("[API/generate] Extract PDF Error:", err);
       const msg = err instanceof Error ? err.message : "";
       if (msg === "no_text") {
         return NextResponse.json(
