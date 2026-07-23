@@ -1,5 +1,12 @@
 # CeritaBelajar PDF 📚
 
+> ⚠️ **PENGUMUMAN PENTING (DEPLOYMENT)**
+> 
+> Dikarenakan *outage* (gangguan) pada Vercel dan masalah kompatibilitas Turbopack, aplikasi ini untuk sementara dialihkan pengembangannya menggunakan **Netlify**.
+> 
+> 🌐 **Link Aplikasi Aktif (Netlify):**
+> [https://agent-6a61ba54202ceda556d2902--ceritabelajar-pdf.netlify.app/](https://agent-6a61ba54202ceda556d2902--ceritabelajar-pdf.netlify.app/)
+
 Ubah materi PDF menjadi cerita edukatif yang mudah dipahami (menggunakan agen AI).
 
 Aplikasi ini membaca PDF secara statis di sisi server (via `pdfjs-dist`), dan memanfaatkan **satu agen AI** (via OpenRouter `deepseek/deepseek-v4-flash`) untuk menyusun cerita dengan aturan fakta yang ketat berdasarkan input teks dari dokumen aslinya.
