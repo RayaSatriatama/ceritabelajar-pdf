@@ -8,7 +8,7 @@ import OpenAI from "openai";
 import type { StoryLength, StoryResponse } from "@/types/story";
 
 const OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1";
-const MODEL = "deepseek/deepseek-v4-flash";
+const MODEL = process.env.LLM_MODEL || "deepseek/deepseek-v4-flash";
 
 function buildClient(): OpenAI {
   const apiKey = process.env.OPENROUTER_API_KEY;
