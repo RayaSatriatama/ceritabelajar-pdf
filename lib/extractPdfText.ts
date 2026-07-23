@@ -27,7 +27,12 @@ export async function extractPdfText(buffer: ArrayBuffer): Promise<string> {
     const page = await pdf.getPage(i);
     const textContent = await page.getTextContent();
     const pageText = textContent.items
-      .map((item: { str: string }) => item.str)
+      .map((item: unknown) => {
+        if (item && typeof item === "object" && "str" in item) {
+          return (item as { str: string }).str;
+        }
+        return "";
+      })
       .join(" ");
     fullText += pageText + " ";
   }
