@@ -55,7 +55,7 @@ export async function POST(request: NextRequest) {
         );
       }
       return NextResponse.json(
-        { error: "PDF tidak dapat dibuka. Periksa file atau gunakan PDF lain." },
+        { error: "PDF tidak dapat dibuka. Detail: " + msg },
         { status: 422 }
       );
     }
