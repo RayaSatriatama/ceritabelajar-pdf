@@ -8,7 +8,7 @@ const MAX_CHARS = 15000;
 
 
 export async function extractPdfText(buffer: ArrayBuffer): Promise<string> {
-  const pdfjsLib = await import("pdfjs-dist/legacy/build/pdf.js");
+  const pdfjsLib = await import("pdfjs-dist");
   
   // Matikan worker fetch karena ini jalan di Node.js server
   // (Tidak perlu set workerSrc di node.js jika kita bypass webpack)
